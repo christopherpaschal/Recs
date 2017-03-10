@@ -507,6 +507,7 @@
 				E75135AA1E725918004AE32D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E75135AB1E725918004AE32D /* Build configuration list for PBXNativeTarget "RecsTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +516,7 @@
 				E75135AD1E725918004AE32D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E75135AE1E725918004AE32D /* Build configuration list for PBXNativeTarget "RecsUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +525,7 @@
 				E75135B01E725918004AE32D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
