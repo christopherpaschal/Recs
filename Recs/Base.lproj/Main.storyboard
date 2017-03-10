@@ -131,7 +131,7 @@
                                     <constraint firstAttribute="width" constant="30" id="N4h-wo-2uB"/>
                                     <constraint firstAttribute="height" constant="30" id="Rbf-jt-4Gt"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="first"/>
+                                <state key="normal" title="Button" image="write_rec_icon"/>
                                 <connections>
                                     <segue destination="DM3-b0-q6v" kind="presentation" id="ilI-JC-kuM"/>
                                 </connections>
@@ -153,7 +153,7 @@
                             <constraint firstItem="ZdM-kq-DtW" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="qmj-Tj-vWM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Profile" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" image="my_profile_icon" selectedImage="my_profile_icon" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,7 +219,7 @@
                                     <constraint firstAttribute="height" constant="30" id="I5R-Gf-hym"/>
                                     <constraint firstAttribute="width" constant="30" id="tnc-T7-mZs"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="first"/>
+                                <state key="normal" title="Button" image="write_rec_icon"/>
                                 <connections>
                                     <segue destination="DM3-b0-q6v" kind="presentation" id="mG5-0I-0m1"/>
                                 </connections>
@@ -234,7 +234,7 @@
                             <constraint firstItem="NEy-xg-QtB" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="10" id="sAT-Ap-B0u"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed_icon" selectedImage="feed_icon" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,7 +258,7 @@
                                     <constraint firstAttribute="height" constant="30" id="kQs-qt-TEh"/>
                                     <constraint firstAttribute="width" constant="30" id="ptc-Ws-19u"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="first"/>
+                                <state key="normal" title="Button" image="write_rec_icon"/>
                                 <connections>
                                     <segue destination="DM3-b0-q6v" kind="presentation" id="tqI-ab-jlw"/>
                                 </connections>
@@ -280,7 +280,7 @@
                             <constraint firstItem="kk9-Pi-ckw" firstAttribute="centerX" secondItem="t3I-Iv-DLg" secondAttribute="centerX" id="zy8-2z-PDz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Saved Recs" image="first" id="zXU-rm-sKV"/>
+                    <tabBarItem key="tabBarItem" title="My Saved Recs" image="save_rec_icon" selectedImage="save_rec_icon" id="zXU-rm-sKV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoU-wx-rvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -307,10 +307,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="feed_icon" width="30" height="30"/>
+        <image name="my_profile_icon" width="30" height="30"/>
+        <image name="save_rec_icon" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="write_rec_icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mG5-0I-0m1"/>
+        <segue reference="tqI-ab-jlw"/>
     </inferredMetricsTieBreakers>
 </document>
