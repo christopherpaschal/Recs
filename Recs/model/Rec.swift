@@ -10,10 +10,14 @@ import Foundation
 
 class Rec {
     
-    var category: String
-    var title: String
-    var reason: String
-    var userId: Int
-    var recId: Int
+    var category: String = ""
+    var title: String = ""
+    var reason: String = ""
+    var date: Date = Date()
+    var userId: Int = 0
+    var recId: Int = 0
     
+    init() {
+        
+    }
 }

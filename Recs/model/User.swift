@@ -10,12 +10,15 @@ import Foundation
 
 class User {
     
-    var firstName: String
-    var lastName: String
-    var handle: String
-    var followers: Int
-    var following: Int
-    var userId: Int
+    var firstName: String = ""
+    var lastName: String = ""
+    var handle: String = ""
+    var followers: Int = 0
+    var following: Int = 0
+    var userId: Int = 0
     
+    init() {
+        
+    }
     
 }

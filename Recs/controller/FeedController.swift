@@ -17,6 +17,11 @@ class FeedController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let rec: Rec = Rec()
+        rec.title = "new title"
+        print(rec.title)
+        
     }
 
     override func didReceiveMemoryWarning() {
