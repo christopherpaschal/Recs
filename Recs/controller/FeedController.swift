@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FeedController.swift
 //  Recs
 //
 //  Created by Christopher Paschal on 3/9/17.
@@ -8,8 +8,12 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class FeedController: UIViewController {
 
+    // UI Components
+    @IBOutlet weak var recsFeedList: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
