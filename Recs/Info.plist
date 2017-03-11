@@ -42,5 +42,52 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string>&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
+&lt;dict&gt;
+    &lt;key&gt;NSExceptionDomains&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;amazonaws.com&lt;/key&gt;
+        &lt;dict&gt;
+              &lt;key&gt;NSThirdPartyExceptionMinimumTLSVersion&lt;/key&gt;
+              &lt;string&gt;TLSv1.0&lt;/string&gt;
+              &lt;key&gt;NSThirdPartyExceptionRequiresForwardSecrecy&lt;/key&gt;
+              &lt;false/&gt;
+              &lt;key&gt;NSIncludesSubdomains&lt;/key&gt;
+              &lt;true/&gt;
+        &lt;/dict&gt;
+        &lt;key&gt;amazonaws.com.cn&lt;/key&gt;
+        &lt;dict&gt;
+              &lt;key&gt;NSThirdPartyExceptionMinimumTLSVersion&lt;/key&gt;
+              &lt;string&gt;TLSv1.0&lt;/string&gt;
+              &lt;key&gt;NSThirdPartyExceptionRequiresForwardSecrecy&lt;/key&gt;
+              &lt;false/&gt;
+              &lt;key&gt;NSIncludesSubdomains&lt;/key&gt;
+              &lt;true/&gt;
+        &lt;/dict&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb269586606815398</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>269586606815398</string>
+    <key>FacebookDisplayName</key>
+    <string>Recs</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>profile pics</string>
 </dict>
 </plist>

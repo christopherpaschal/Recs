@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		968A18F558C6D7D92B2D1223 /* Pods_Recs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE82AEB9F3842CDA7502BFB /* Pods_Recs.framework */; };
+		E706E5341E7380A4008FE13A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E706E5331E7380A4008FE13A /* Bolts.framework */; };
 		E75135821E725918004AE32D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75135811E725918004AE32D /* AppDelegate.swift */; };
 		E75135841E725918004AE32D /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75135831E725918004AE32D /* FeedController.swift */; };
 		E75135861E725918004AE32D /* MyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75135851E725918004AE32D /* MyProfileController.swift */; };
@@ -16,6 +17,11 @@
 		E751358E1E725918004AE32D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E751358C1E725918004AE32D /* LaunchScreen.storyboard */; };
 		E75135991E725918004AE32D /* RecsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75135981E725918004AE32D /* RecsTests.swift */; };
 		E75135A41E725918004AE32D /* RecsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75135A31E725918004AE32D /* RecsUITests.swift */; };
+		E7A422C11E7380E400DC3B24 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A422C01E7380E400DC3B24 /* FBSDKCoreKit.framework */; };
+		E7A422C31E7380EF00DC3B24 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A422C21E7380EF00DC3B24 /* FBSDKLoginKit.framework */; };
+		E7A422C51E7380FC00DC3B24 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A422C41E7380FC00DC3B24 /* FBSDKShareKit.framework */; };
+		E7A422C81E73868100DC3B24 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A422C71E73868100DC3B24 /* LoginController.swift */; };
+		E7A422CC1E73928100DC3B24 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A422CB1E73928100DC3B24 /* Util.swift */; };
 		E7B58F741E734DFA00327941 /* SavedRecsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F731E734DFA00327941 /* SavedRecsController.swift */; };
 		E7B58F761E7351DB00327941 /* WriteRecController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F751E7351DB00327941 /* WriteRecController.swift */; };
 		E7B58F781E73529E00327941 /* Rec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F771E73529E00327941 /* Rec.swift */; };
@@ -44,6 +50,7 @@
 		111FAF090F01ED2A4EF63AD3 /* Pods-Recs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recs/Pods-Recs.release.xcconfig"; sourceTree = "<group>"; };
 		65320BEB9BF1A5E71AD80A19 /* Pods-Recs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Recs/Pods-Recs.debug.xcconfig"; sourceTree = "<group>"; };
 		8AE82AEB9F3842CDA7502BFB /* Pods_Recs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E706E5331E7380A4008FE13A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../../Downloads/FacebookSDKs-iOS-4.20.0/Bolts.framework"; sourceTree = "<group>"; };
 		E751357E1E725918004AE32D /* Recs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75135811E725918004AE32D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E75135831E725918004AE32D /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
@@ -58,6 +65,13 @@
 		E751359F1E725918004AE32D /* RecsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75135A31E725918004AE32D /* RecsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecsUITests.swift; sourceTree = "<group>"; };
 		E75135A51E725918004AE32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7A422C01E7380E400DC3B24 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../../Downloads/FacebookSDKs-iOS-4.20.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		E7A422C21E7380EF00DC3B24 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../../Downloads/FacebookSDKs-iOS-4.20.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		E7A422C41E7380FC00DC3B24 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../../Downloads/FacebookSDKs-iOS-4.20.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		E7A422C61E73849000DC3B24 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		E7A422C71E73868100DC3B24 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E7A422C91E73900900DC3B24 /* Recs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Recs.entitlements; sourceTree = "<group>"; };
+		E7A422CB1E73928100DC3B24 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		E7B58F731E734DFA00327941 /* SavedRecsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedRecsController.swift; sourceTree = "<group>"; };
 		E7B58F751E7351DB00327941 /* WriteRecController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteRecController.swift; sourceTree = "<group>"; };
 		E7B58F771E73529E00327941 /* Rec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rec.swift; sourceTree = "<group>"; };
@@ -71,6 +85,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				968A18F558C6D7D92B2D1223 /* Pods_Recs.framework in Frameworks */,
+				E7A422C11E7380E400DC3B24 /* FBSDKCoreKit.framework in Frameworks */,
+				E7A422C51E7380FC00DC3B24 /* FBSDKShareKit.framework in Frameworks */,
+				E7A422C31E7380EF00DC3B24 /* FBSDKLoginKit.framework in Frameworks */,
+				E706E5341E7380A4008FE13A /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +143,8 @@
 		E75135801E725918004AE32D /* Recs */ = {
 			isa = PBXGroup;
 			children = (
+				E7A422CA1E73924E00DC3B24 /* util */,
+				E7A422C91E73900900DC3B24 /* Recs.entitlements */,
 				E7B58F721E734D8B00327941 /* model */,
 				E7B58F711E734D7600327941 /* controller */,
 				E75135811E725918004AE32D /* AppDelegate.swift */,
@@ -132,6 +152,7 @@
 				E751358A1E725918004AE32D /* Assets.xcassets */,
 				E751358C1E725918004AE32D /* LaunchScreen.storyboard */,
 				E751358F1E725918004AE32D /* Info.plist */,
+				E7A422C61E73849000DC3B24 /* Bridging-Header.h */,
 			);
 			path = Recs;
 			sourceTree = "<group>";
@@ -154,6 +175,14 @@
 			path = RecsUITests;
 			sourceTree = "<group>";
 		};
+		E7A422CA1E73924E00DC3B24 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				E7A422CB1E73928100DC3B24 /* Util.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 		E7B58F711E734D7600327941 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +190,7 @@
 				E75135851E725918004AE32D /* MyProfileController.swift */,
 				E7B58F731E734DFA00327941 /* SavedRecsController.swift */,
 				E7B58F751E7351DB00327941 /* WriteRecController.swift */,
+				E7A422C71E73868100DC3B24 /* LoginController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -178,6 +208,10 @@
 		FBF111ED98D4EAD98B504736 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7A422C41E7380FC00DC3B24 /* FBSDKShareKit.framework */,
+				E7A422C21E7380EF00DC3B24 /* FBSDKLoginKit.framework */,
+				E7A422C01E7380E400DC3B24 /* FBSDKCoreKit.framework */,
+				E706E5331E7380A4008FE13A /* Bolts.framework */,
 				8AE82AEB9F3842CDA7502BFB /* Pods_Recs.framework */,
 			);
 			name = Frameworks;
@@ -254,7 +288,13 @@
 				TargetAttributes = {
 					E751357D1E725918004AE32D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 67UDSA8UFD;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					E75135931E725918004AE32D = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -371,9 +411,11 @@
 				E7B58F7A1E7353A800327941 /* SavedRec.swift in Sources */,
 				E7B58F741E734DFA00327941 /* SavedRecsController.swift in Sources */,
 				E75135861E725918004AE32D /* MyProfileController.swift in Sources */,
+				E7A422C81E73868100DC3B24 /* LoginController.swift in Sources */,
 				E7B58F781E73529E00327941 /* Rec.swift in Sources */,
 				E75135821E725918004AE32D /* AppDelegate.swift in Sources */,
 				E7B58F761E7351DB00327941 /* WriteRecController.swift in Sources */,
+				E7A422CC1E73928100DC3B24 /* Util.swift in Sources */,
 				E7B58F7C1E73542A00327941 /* User.swift in Sources */,
 				E75135841E725918004AE32D /* FeedController.swift in Sources */,
 			);
@@ -526,10 +568,39 @@
 			baseConfigurationReference = 65320BEB9BF1A5E71AD80A19 /* Pods-Recs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Recs/Recs.entitlements;
+				DEVELOPMENT_TEAM = 67UDSA8UFD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSAutoScaling\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSCloudWatch\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSCognito\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSCognitoIdentityProvider\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSCore\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSDynamoDB\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSEC2\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSElasticLoadBalancing\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSIoT\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSKinesis\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSLambda\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSLex\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSMachineLearning\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSMobileAnalytics\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSPinpoint\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSPolly\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSRekognition\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSS3\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSSES\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSSNS\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSSQS\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSSimpleDB\"",
+					"/Users/christopherpaschal/Documents/misc/ios/Recs/Recs/FacebookSDKs-iOS-4.20.0",
+				);
 				INFOPLIST_FILE = Recs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.christopherpaschal.Recs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Recs/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -539,10 +610,39 @@
 			baseConfigurationReference = 111FAF090F01ED2A4EF63AD3 /* Pods-Recs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Recs/Recs.entitlements;
+				DEVELOPMENT_TEAM = 67UDSA8UFD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSAutoScaling\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSCloudWatch\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSCognito\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSCognitoIdentityProvider\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSCore\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSDynamoDB\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSEC2\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSElasticLoadBalancing\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSIoT\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSKinesis\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSLambda\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSLex\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSMachineLearning\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSMobileAnalytics\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSPinpoint\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSPolly\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSRekognition\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSS3\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSSES\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSSNS\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSSQS\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AWSSimpleDB\"",
+					"/Users/christopherpaschal/Documents/misc/ios/Recs/Recs/FacebookSDKs-iOS-4.20.0",
+				);
 				INFOPLIST_FILE = Recs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.christopherpaschal.Recs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Recs/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
