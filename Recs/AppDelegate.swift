@@ -14,27 +14,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        let ref = UserDefaults.standard
+
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        if (ref.string(forKey: "fb_token") != nil) {
-            print("USER IS LOGGED IN\n\n")
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "tabBar")
-            
-            self.window?.rootViewController = viewController
-            if self.window!.rootViewController as? UITabBarController != nil {
-                let tabbarController = self.window!.rootViewController as! UITabBarController
-                tabbarController.selectedIndex = 1
-            } else {
-                print("couldn't reach rootViewController named UITabBarController")
-            }
-            //self.window?.makeKeyAndVisible()
-            return true
+        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        var initialViewController: UIViewController
+        
+        if(FBSDKAccessToken.current() != nil){
+            let vc = mainStoryboard.instantiateViewController(withIdentifier: "tabBar") as! UITabBarController
+            vc.selectedIndex = 1
+            initialViewController = vc
+        }else{
+            initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "loginController")
         }
-        print("NOPE\n\n\n")
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        self.window?.rootViewController = initialViewController
+        
+        self.window?.makeKeyAndVisible()
+        
+        return true
 
     }
     

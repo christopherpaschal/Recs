@@ -31,9 +31,9 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         {
             // User is already logged in, do work such as go to next view controller.
             print("Already logged in, re=saving FB token\n\n")
-            let ref = UserDefaults.standard
-            ref.set(FBSDKAccessToken.current().tokenString, forKey: "fb_token")
-            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            //let ref = UserDefaults.standard
+            //ref.set(FBSDKAccessToken.current().tokenString, forKey: "fb_token")
+            self.performSegue(withIdentifier: "loginSegue", sender: self)
         }
         else
         {
@@ -45,6 +45,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         }
         
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -73,8 +74,8 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             {
                 // Do work
             }
-            let ref = UserDefaults.standard
-            ref.set(FBSDKAccessToken.current().tokenString, forKey: "fb_token")
+            //let ref = UserDefaults.standard
+            //ref.set(FBSDKAccessToken.current().tokenString, forKey: "fb_token")
             self.performSegue(withIdentifier: "loginSegue", sender: nil)
         }
     }

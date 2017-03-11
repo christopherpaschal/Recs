@@ -36,16 +36,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Csu-zB-rba" userLabel="Profile Name View">
-                                <rect key="frame" x="0.0" y="161" width="375" height="51"/>
+                                <rect key="frame" x="0.0" y="161" width="375" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstName LastName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VC-v7-Fsc" userLabel="Profile Name">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@handle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7D-yL-jNw" userLabel="Profile Handle">
-                                        <rect key="frame" x="0.0" y="30.5" width="375" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="31" width="375" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdM-kq-DtW" userLabel="Followers/Following View">
-                                <rect key="frame" x="37" y="220" width="300" height="40"/>
+                                <rect key="frame" x="37" y="221" width="300" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-bA-5RS" userLabel="Followers Button">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
@@ -382,7 +382,7 @@
         <!--Login Controller-->
         <scene sceneID="cUr-CI-Vu5">
             <objects>
-                <viewController id="Xjd-MO-5dm" userLabel="Login Controller" customClass="LoginController" customModule="Recs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginController" id="Xjd-MO-5dm" userLabel="Login Controller" customClass="LoginController" customModule="Recs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RXm-dy-ORa"/>
                         <viewControllerLayoutGuide type="bottom" id="y1r-Au-tI4"/>
@@ -443,7 +443,7 @@
         <image name="write_rec_icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hy5-Ts-3pb"/>
+        <segue reference="cq0-a4-RhG"/>
         <segue reference="mG5-0I-0m1"/>
     </inferredMetricsTieBreakers>
 </document>
