@@ -84,29 +84,6 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("User Logged Out")
     }
-    
-    func returnUserData()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
-                // Process error
-                print("Error: \(error)")
-            }
-            else
-            {
-                let data:[String:AnyObject] = result as! [String : AnyObject]
-                
-                
-                let userName : NSString? = data["name"]! as? NSString
-                let facebookID : NSString? = data["id"]! as? NSString
-                let firstName : NSString? = data["first_name"]! as? NSString
-                let lastName : NSString? = data["last_name"]! as? NSString
-                let email : NSString? = data["email"]! as? NSString
-            }
-        })
-    }
+
     
 }

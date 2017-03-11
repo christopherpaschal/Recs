@@ -8,8 +8,16 @@
 
 import UIKit
 
+struct LoggedInUser {
+    
+    static var id: String = ""
+    static var name: String = ""
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    
 
     var window: UIWindow?
 
@@ -22,9 +30,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var initialViewController: UIViewController
         
         if(FBSDKAccessToken.current() != nil){
+            
+            // go straight to main page
             let vc = mainStoryboard.instantiateViewController(withIdentifier: "tabBar") as! UITabBarController
             vc.selectedIndex = 1
             initialViewController = vc
+            
+            // save information of logged in user into LoggedInUser
+            let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id, name"])
+            let connection = FBSDKGraphRequestConnection()
+            connection.add(graphRequest, completionHandler: { (connection, result, error) -> Void in
+                
+                let data = result as! [String : AnyObject]
+                
+                LoggedInUser.name = (data["name"] as? String)!
+                
+                LoggedInUser.id = (data["id"] as? String)!
+
+            })
+            connection.start()
+            
         }else{
             initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "loginController")
         }
