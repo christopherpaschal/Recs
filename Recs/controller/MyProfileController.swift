@@ -27,8 +27,10 @@ class MyProfileController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //profileNameLabel.text = firstName + " " + lastName
-        addUserData()
+        
+        
+        // populate user data from FB
+        populateUserData()
        
     }
 
@@ -38,31 +40,15 @@ class MyProfileController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func addUserData() {
+    func populateUserData() {
 
         self.profileNameLabel.text = LoggedInUser.name
         
         let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/picture?type=large&return_ssl_resources=1")
         self.profileImage.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
-//        if(FBSDKAccessToken.current() != nil) {
-//            //print permissions, such as public_profile
-//            //print(FBSDKAccessToken.current().permissions)
-//            let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id, name, email"])
-//            let connection = FBSDKGraphRequestConnection()
-//            
-//            connection.add(graphRequest, completionHandler: { (connection, result, error) -> Void in
-//                
-//                let data = result as! [String : AnyObject]
-//                
-//                self.profileNameLabel.text = data["name"] as? String
-//                
-//                let FBid = data["id"] as? String
-//                
-//                let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
-//                self.profileImage.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
-//            })
-//            connection.start()
-//        }
+        self.profileImage.layer.cornerRadius = 10.0
+        self.profileImage.clipsToBounds = true
+
     }
 
 

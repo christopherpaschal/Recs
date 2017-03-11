@@ -36,90 +36,22 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Csu-zB-rba" userLabel="Profile Name View">
-                                <rect key="frame" x="0.0" y="161" width="375" height="52"/>
+                                <rect key="frame" x="0.0" y="161" width="375" height="30.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstName LastName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VC-v7-Fsc" userLabel="Profile Name">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@handle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7D-yL-jNw" userLabel="Profile Handle">
-                                        <rect key="frame" x="0.0" y="31" width="375" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="C7D-yL-jNw" firstAttribute="top" secondItem="8VC-v7-Fsc" secondAttribute="bottom" id="GmS-sE-96l"/>
                                     <constraint firstAttribute="width" constant="375" id="MC8-P7-Lqa"/>
-                                    <constraint firstItem="C7D-yL-jNw" firstAttribute="centerX" secondItem="Csu-zB-rba" secondAttribute="centerX" id="fKU-IJ-s96"/>
                                     <constraint firstItem="8VC-v7-Fsc" firstAttribute="centerX" secondItem="Csu-zB-rba" secondAttribute="centerX" id="hY0-sb-cjw"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdM-kq-DtW" userLabel="Followers/Following View">
-                                <rect key="frame" x="37" y="221" width="300" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-bA-5RS" userLabel="Followers Button">
-                                        <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="Knl-UB-m4e"/>
-                                        </constraints>
-                                        <state key="normal" title="Followers"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcP-LE-emc">
-                                        <rect key="frame" x="85" y="0.0" width="25" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="cDp-Oi-taY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXx-UA-X3C" userLabel="Spacer View">
-                                        <rect key="frame" x="110" y="0.0" width="80" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="ZrQ-Ip-3ed"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKa-sc-Mhd" userLabel="Following Button">
-                                        <rect key="frame" x="190" y="0.0" width="85" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="qRL-2r-biJ"/>
-                                        </constraints>
-                                        <state key="normal" title="Following"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5x-LI-ma1">
-                                        <rect key="frame" x="275" y="0.0" width="25" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="dpo-QT-qX1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="dcP-LE-emc" firstAttribute="centerY" secondItem="ZdM-kq-DtW" secondAttribute="centerY" id="0ui-ut-9i8"/>
-                                    <constraint firstItem="EKa-sc-Mhd" firstAttribute="centerY" secondItem="ZdM-kq-DtW" secondAttribute="centerY" id="5p3-rB-4L4"/>
-                                    <constraint firstItem="Q6h-bA-5RS" firstAttribute="centerY" secondItem="ZdM-kq-DtW" secondAttribute="centerY" id="Ct8-PL-klu"/>
-                                    <constraint firstAttribute="height" constant="40" id="J7P-yT-Pad"/>
-                                    <constraint firstAttribute="width" constant="300" id="LiG-u8-IOE"/>
-                                    <constraint firstItem="q5x-LI-ma1" firstAttribute="centerY" secondItem="ZdM-kq-DtW" secondAttribute="centerY" id="ZLV-i9-s22"/>
-                                </constraints>
-                            </stackView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iVD-5b-Jfj" userLabel="Spacing Bar View">
-                                <rect key="frame" x="67" y="268" width="240" height="1"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="Au4-am-fGZ"/>
-                                    <constraint firstAttribute="height" constant="1" id="mA3-Hh-8E5"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0IN-HR-sGB">
-                                <rect key="frame" x="0.0" y="277" width="375" height="341"/>
+                                <rect key="frame" x="0.0" y="234" width="375" height="384"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="340" id="V3P-eW-LdL"/>
@@ -137,28 +69,31 @@
                                     <segue destination="DM3-b0-q6v" kind="presentation" id="ilI-JC-kuM"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iVD-5b-Jfj" userLabel="Spacing Bar View">
+                                <rect key="frame" x="67" y="210" width="240" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="Au4-am-fGZ"/>
+                                    <constraint firstAttribute="height" constant="1" id="mA3-Hh-8E5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0IN-HR-sGB" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="4Se-H5-BW8"/>
                             <constraint firstItem="YgS-hJ-zD8" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="CTp-zG-62c"/>
-                            <constraint firstItem="ZdM-kq-DtW" firstAttribute="top" secondItem="Csu-zB-rba" secondAttribute="bottom" constant="8" id="INY-Rz-ybJ"/>
                             <constraint firstItem="0IN-HR-sGB" firstAttribute="top" secondItem="iVD-5b-Jfj" secondAttribute="bottom" constant="8" id="LOP-3M-mEZ"/>
                             <constraint firstItem="GRf-hU-fz7" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="N1H-Mm-sz0"/>
                             <constraint firstItem="YgS-hJ-zD8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="QpU-Ah-b37"/>
                             <constraint firstAttribute="trailing" secondItem="GRf-hU-fz7" secondAttribute="trailing" constant="10" id="VSx-QD-sU8"/>
+                            <constraint firstItem="iVD-5b-Jfj" firstAttribute="top" secondItem="8VC-v7-Fsc" secondAttribute="bottom" constant="8" id="XcM-Ir-ujE"/>
                             <constraint firstItem="Csu-zB-rba" firstAttribute="top" secondItem="YgS-hJ-zD8" secondAttribute="bottom" constant="8" id="bUf-6G-x9k"/>
-                            <constraint firstItem="iVD-5b-Jfj" firstAttribute="top" secondItem="ZdM-kq-DtW" secondAttribute="bottom" constant="8" id="dLs-dE-85V"/>
                             <constraint firstItem="Csu-zB-rba" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ikY-10-JlD"/>
                             <constraint firstItem="iVD-5b-Jfj" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="o5K-U9-Gew"/>
-                            <constraint firstItem="ZdM-kq-DtW" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="qmj-Tj-vWM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Profile" image="my_profile_icon" selectedImage="my_profile_icon" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="profileFollowersLabel" destination="dcP-LE-emc" id="XLi-wf-5CI"/>
-                        <outlet property="profileFollowingLabel" destination="q5x-LI-ma1" id="86w-5B-jJn"/>
-                        <outlet property="profileHandleLabel" destination="C7D-yL-jNw" id="udw-am-hRD"/>
                         <outlet property="profileImage" destination="XQf-Ej-VLu" id="Hhf-iv-t53"/>
                         <outlet property="profileNameLabel" destination="8VC-v7-Fsc" id="7XZ-j2-MmN"/>
                         <outlet property="profileRecsList" destination="0IN-HR-sGB" id="6md-Ee-uzj"/>
@@ -444,6 +379,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cq0-a4-RhG"/>
-        <segue reference="mG5-0I-0m1"/>
+        <segue reference="ilI-JC-kuM"/>
     </inferredMetricsTieBreakers>
 </document>
