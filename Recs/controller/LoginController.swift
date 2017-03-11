@@ -1,5 +1,5 @@
 //
-//  LaunchScreenController.swift
+//  LoginController.swift
 //  Recs
 //
 //  Created by Christopher Paschal on 3/10/17.
@@ -30,7 +30,10 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         if (FBSDKAccessToken.current() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
-            showHomeScreen()
+            print("Already logged in, re=saving FB token\n\n")
+            let ref = UserDefaults.standard
+            ref.set(FBSDKAccessToken.current().tokenString, forKey: "fb_token")
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
         }
         else
         {
@@ -39,7 +42,6 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             loginView.center = self.view.center
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
             loginView.delegate = self
-            print("ATTEMPTING LOGIN\n\n")
         }
         
     }
@@ -49,10 +51,6 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func showHomeScreen() {
-        print("showing main screen")
-        self.performSegue(withIdentifier: "loginSegue", sender: nil)
-    }
     
     
     
@@ -64,11 +62,9 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         if ((error) != nil)
         {
             // Process error
-            print("BAAAAAAAD")
         }
         else if result.isCancelled {
             // Handle cancellations
-            print("CANCELLED")
         }
         else {
             // If you ask for multiple permissions at once, you
@@ -77,8 +73,9 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             {
                 // Do work
             }
-            print("FB login complete")
-            showHomeScreen()
+            let ref = UserDefaults.standard
+            ref.set(FBSDKAccessToken.current().tokenString, forKey: "fb_token")
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
         }
     }
     

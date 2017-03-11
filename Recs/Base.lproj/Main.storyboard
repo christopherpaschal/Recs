@@ -171,7 +171,7 @@
         <!--Write Rec-->
         <scene sceneID="Ur5-v1-jZl">
             <objects>
-                <viewController id="DM3-b0-q6v" userLabel="Write Rec" customClass="WriteRecController" sceneMemberID="viewController">
+                <viewController id="DM3-b0-q6v" userLabel="Write Rec" customClass="WriteRecController" customModule="Recs" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ppf-pv-MMG"/>
                         <viewControllerLayoutGuide type="bottom" id="9Eh-Pe-cgP"/>
@@ -190,10 +190,10 @@
                                 <rect key="frame" x="71" y="566" width="50" height="50"/>
                                 <state key="normal" image="cancel_icon"/>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="presentation" id="jQA-qB-dLy"/>
+                                    <segue destination="49e-Tb-3d3" kind="presentation" id="Hy5-Ts-3pb"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kyB-RM-LPp">
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kyB-RM-LPp">
                                 <rect key="frame" x="0.0" y="89" width="375" height="136"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="peI-GM-ndo"/>
@@ -272,16 +272,10 @@
                             <constraint firstItem="Q7h-7O-4if" firstAttribute="top" secondItem="Pms-8c-5Za" secondAttribute="bottom" constant="10" id="ikj-Hr-bbr"/>
                             <constraint firstItem="ABf-kg-GIW" firstAttribute="centerX" secondItem="GoQ-FH-dWs" secondAttribute="centerX" id="ipA-hL-IMN"/>
                             <constraint firstItem="bBA-Yl-8qF" firstAttribute="centerX" secondItem="GoQ-FH-dWs" secondAttribute="centerX" id="wmt-68-wpu"/>
+                            <constraint firstItem="kyB-RM-LPp" firstAttribute="centerX" secondItem="GoQ-FH-dWs" secondAttribute="centerX" id="xsH-Ab-Cqz"/>
                             <constraint firstItem="5ho-bC-S0n" firstAttribute="top" secondItem="TWe-gz-5fZ" secondAttribute="bottom" constant="50" id="yjw-Ee-UML"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="cancelRecButton" destination="t3u-ut-dNo" id="fSM-tf-1fp"/>
-                        <outlet property="categoryPicker" destination="kyB-RM-LPp" id="KUg-b4-20g"/>
-                        <outlet property="recReasonField" destination="Q7h-7O-4if" id="oSY-uL-Hh9"/>
-                        <outlet property="recTitleField" destination="ABf-kg-GIW" id="weO-QV-si9"/>
-                        <outlet property="saveRecButton" destination="5ho-bC-S0n" id="tF8-YU-uBY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlb-NW-Jld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -422,7 +416,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -449,7 +443,7 @@
         <image name="write_rec_icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cq0-a4-RhG"/>
-        <segue reference="tqI-ab-jlw"/>
+        <segue reference="Hy5-Ts-3pb"/>
+        <segue reference="mG5-0I-0m1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,16 +13,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if self.window!.rootViewController as? UITabBarController != nil {
-            let tabbarController = self.window!.rootViewController as! UITabBarController
-            tabbarController.selectedIndex = 1
+        let ref = UserDefaults.standard
+        
+        if (ref.string(forKey: "fb_token") != nil) {
+            print("USER IS LOGGED IN\n\n")
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "tabBar")
+            
+            self.window?.rootViewController = viewController
+            if self.window!.rootViewController as? UITabBarController != nil {
+                let tabbarController = self.window!.rootViewController as! UITabBarController
+                tabbarController.selectedIndex = 1
+            } else {
+                print("couldn't reach rootViewController named UITabBarController")
+            }
+            //self.window?.makeKeyAndVisible()
+            return true
         }
-        else{
-            print("couldn't reach rootViewController named UITabBarController")
-        }
+        print("NOPE\n\n\n")
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
     }
@@ -31,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      open url: URL,
                      sourceApplication: String?,
                      annotation: Any) -> Bool {
+        
         return FBSDKApplicationDelegate.sharedInstance().application(
             application,
             open: url as URL!,
