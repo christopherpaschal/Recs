@@ -190,7 +190,7 @@
                                 <rect key="frame" x="71" y="566" width="50" height="50"/>
                                 <state key="normal" image="cancel_icon"/>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="presentation" id="Hy5-Ts-3pb"/>
+                                    <segue destination="49e-Tb-3d3" kind="presentation" identifier="cancelWriteRecSegue" id="Hy5-Ts-3pb"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kyB-RM-LPp">

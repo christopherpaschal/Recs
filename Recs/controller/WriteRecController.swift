@@ -28,6 +28,13 @@ class WriteRecController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "cancelWriteRecSegue" {
+            let nextView = segue.destination as! UITabBarController
+            nextView.selectedIndex = 1
+        }
+    }
+    
     
 }
 
