@@ -18,6 +18,6 @@ class Rec {
     var recId: Int = 0
     
     init() {
-        
+        title = "This is the title"
     }
 }

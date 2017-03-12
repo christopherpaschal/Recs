@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyProfileController: UIViewController {
+class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // UI Components
     @IBOutlet weak var profileImage: UIImageView!
@@ -22,6 +22,8 @@ class MyProfileController: UIViewController {
     var firstName: String = "firstname"
     var lastName: String = "lastname"
     var pictureURL: String = ""
+    
+    var recList = [Rec]()
     
 
     override func viewDidLoad() {
@@ -40,6 +42,24 @@ class MyProfileController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1 // your number of cell here
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // your cell coding
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "text"
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+        // cell selected code here
+    }
+    
+    
     func populateUserData() {
 
         self.profileNameLabel.text = LoggedInUser.name
@@ -49,6 +69,10 @@ class MyProfileController: UIViewController {
         self.profileImage.layer.cornerRadius = 10.0
         self.profileImage.clipsToBounds = true
 
+        
+        self.profileRecsList.beginUpdates()
+        self.profileRecsList.cellForRow(at: NSIndexPath(row: 1, section: 0) as IndexPath)
+        self.profileRecsList.endUpdates()
     }
 
 
