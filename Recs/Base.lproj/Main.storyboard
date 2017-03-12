@@ -50,11 +50,10 @@
                                     <constraint firstItem="8VC-v7-Fsc" firstAttribute="centerX" secondItem="Csu-zB-rba" secondAttribute="centerX" id="hY0-sb-cjw"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0IN-HR-sGB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0IN-HR-sGB">
                                 <rect key="frame" x="0.0" y="234" width="375" height="384"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="340" id="V3P-eW-LdL"/>
                                     <constraint firstAttribute="width" constant="375" id="xfl-A5-zeR"/>
                                 </constraints>
                                 <color key="separatorColor" red="0.59999999999999998" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -213,6 +212,9 @@
                             <constraint firstItem="5ho-bC-S0n" firstAttribute="top" secondItem="TWe-gz-5fZ" secondAttribute="bottom" constant="50" id="yjw-Ee-UML"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryPicker" destination="kyB-RM-LPp" id="fTK-xX-8N1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlb-NW-Jld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

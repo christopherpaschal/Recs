@@ -55,7 +55,7 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // cell selected code here
     }
     
