@@ -42,7 +42,7 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         recList.append("lkj;j")
         recList.append("lkj;lkl;j")
         
-        profileRecListHeightConstraint.constant = CGFloat(80 * recList.count)
+        //profileRecListHeightConstraint.constant = CGFloat(100 * recList.count)
         
         // populate user data from FB
         populateUserData()
