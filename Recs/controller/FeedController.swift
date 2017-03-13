@@ -49,11 +49,11 @@ class FeedController: UIViewController, UITableViewDelegate, UITableViewDataSour
             for: indexPath) as! RecTableViewCell
         
         // create boilerplate size and shape
-        cell.contentView.backgroundColor = UIColor.blue
+        cell.contentView.backgroundColor = UIColor.clear
         
         let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 120))
         
-        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 135.0, 186.0, 0.9])
+        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [8.0, 135.0, 186.0, 0.0])
         whiteRoundedView.layer.masksToBounds = false
         whiteRoundedView.layer.cornerRadius = 10.0
         whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
@@ -67,11 +67,12 @@ class FeedController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // add to cell
         cell.contentView.addSubview(whiteRoundedView)
-        cell.contentView.sendSubview(toBack: whiteRoundedView)
+        //cell.contentView.sendSubview(toBack: whiteRoundedView)
         
         // add specific Rec data
         cell.recUserLabel.text = String(recList[indexPath.row].userId)
         cell.recTitleLabel.text = recList[indexPath.row].title
+                
         
         
         
