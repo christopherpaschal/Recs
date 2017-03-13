@@ -18,18 +18,31 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var profileFollowingLabel: UILabel!
     @IBOutlet weak var profileRecsList: UITableView!
     
+    @IBOutlet weak var profileRecListHeightConstraint: NSLayoutConstraint!
+    
     var id: String = ""
     var firstName: String = "firstname"
     var lastName: String = "lastname"
     var pictureURL: String = ""
     
-    var recList = [Rec]()
+    var recList = [String]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        profileRecsList.dataSource = self
+        profileRecsList.delegate = self
+                
+        recList.append("Text 1")
+        recList.append("Text 2")
+        recList.append("Text 3")
+        recList.append("Text 4")
+        recList.append("lkj;j")
+        recList.append("lkj;lkl;j")
+        
+        profileRecListHeightConstraint.constant = CGFloat(80 * recList.count)
         
         // populate user data from FB
         populateUserData()
@@ -44,13 +57,29 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 // your number of cell here
+        return recList.count // your number of cell here
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // your cell coding
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "text"
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "recCell",
+            for: indexPath)
+        
+        cell.contentView.backgroundColor = UIColor.clear
+        
+        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 70))
+        
+        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
+        whiteRoundedView.layer.masksToBounds = false
+        whiteRoundedView.layer.cornerRadius = 4.0
+        whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
+        whiteRoundedView.layer.shadowOpacity = 0.2
+        
+        cell.contentView.addSubview(whiteRoundedView)
+        cell.contentView.sendSubview(toBack: whiteRoundedView)
+        
+        cell.textLabel?.text = recList[indexPath.row]
         
         return cell
     }
@@ -69,10 +98,6 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         self.profileImage.layer.cornerRadius = 10.0
         self.profileImage.clipsToBounds = true
 
-        
-        self.profileRecsList.beginUpdates()
-        self.profileRecsList.cellForRow(at: NSIndexPath(row: 1, section: 0) as IndexPath)
-        self.profileRecsList.endUpdates()
     }
 
 
