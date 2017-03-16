@@ -25,7 +25,7 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     var lastName: String = "lastname"
     var pictureURL: String = ""
     
-    var recList = [String]()
+    var recList = [Rec]()
     
 
     override func viewDidLoad() {
@@ -34,13 +34,43 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         
         profileRecsList.dataSource = self
         profileRecsList.delegate = self
-                
-        recList.append("Text 1")
-        recList.append("Text 2")
-        recList.append("Text 3")
-        recList.append("Text 4")
-        recList.append("lkj;j")
-        recList.append("lkj;lkl;j")
+        
+        
+        let rec1 = Rec()
+        rec1.userId = 12345
+        rec1.title = "this book I love"
+        rec1.category = "Book"
+        recList.append(rec1)
+        
+        let rec2 = Rec()
+        rec2.userId = 12345
+        rec2.title = "this movie I love"
+        rec2.category = "Movie"
+        recList.append(rec2)
+        
+        let rec3 = Rec()
+        rec3.userId = 12345
+        rec3.title = "this tv show I love"
+        rec3.category = "TV Show"
+        recList.append(rec3)
+        
+        let rec4 = Rec()
+        rec4.userId = 12345
+        rec4.title = "this restaurant I love"
+        rec4.category = "Restaurant"
+        recList.append(rec4)
+        
+        let rec5 = Rec()
+        rec5.userId = 12345
+        rec5.title = "this artist I love"
+        rec5.category = "Artist"
+        recList.append(rec5)
+        
+        let rec6 = Rec()
+        rec6.userId = 12345
+        rec6.title = "this thing I love"
+        rec6.category = "Other"
+        recList.append(rec6)
         
         //profileRecListHeightConstraint.constant = CGFloat(100 * recList.count)
         
@@ -61,25 +91,48 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // your cell coding
+        
+        // create cell as custom template
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "recCell",
-            for: indexPath)
+            for: indexPath) as! UITableViewCell
         
+        // create boilerplate size and shape
         cell.contentView.backgroundColor = UIColor.clear
         
         let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 120))
         
-        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.0])
+        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [8.0, 135.0, 186.0, 0.0])
         whiteRoundedView.layer.masksToBounds = false
         whiteRoundedView.layer.cornerRadius = 10.0
         whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
         whiteRoundedView.layer.shadowOpacity = 0.2
         
+        whiteRoundedView.layer.borderWidth = 3.0
+        
+        // color border according to rec category
+        if recList[indexPath.row].category == "Book" {
+            whiteRoundedView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [241.0, 131.0, 149.0, 1.0])
+        } else if recList[indexPath.row].category == "Movie" {
+            whiteRoundedView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [255.0, 217.0, 139.0, 1.0])
+        } else if recList[indexPath.row].category == "TV Show" {
+            whiteRoundedView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [255.0, 186.0, 139.0, 1.0])
+        } else if recList[indexPath.row].category == "Artist" {
+            whiteRoundedView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [126.0, 114.0, 189.0, 1.0])
+        } else if recList[indexPath.row].category == "Restaurant" {
+            whiteRoundedView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [146.0, 218.0, 119.0, 1.0])
+        } else {
+            whiteRoundedView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [234.0, 245.0, 251.0, 1.0])
+        }
+        
+        
+        // add to cell
         cell.contentView.addSubview(whiteRoundedView)
         //cell.contentView.sendSubview(toBack: whiteRoundedView)
         
-        cell.textLabel?.text = recList[indexPath.row]
+        // add specific Rec data
+        //cell.recUserLabel.text = String(recList[indexPath.row].userId)
+        //cell.recTitleLabel.text = recList[indexPath.row].title
         
         return cell
     }
