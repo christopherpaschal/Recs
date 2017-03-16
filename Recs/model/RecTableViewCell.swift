@@ -12,6 +12,7 @@ class RecTableViewCell: UITableViewCell {
 
     @IBOutlet weak var recUserLabel: UILabel!
     @IBOutlet weak var recTitleLabel: UILabel!
+    @IBOutlet weak var recContentView: UIView!
     
     
     override func awakeFromNib() {
@@ -24,5 +25,6 @@ class RecTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 
 }
