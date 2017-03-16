@@ -15,10 +15,9 @@ class WriteRecController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var recTitleField: UITextField!
     @IBOutlet weak var recReasonField: UITextView!
-    @IBOutlet weak var saveRecButton: UIButton!
-    @IBOutlet weak var cancelRecButton: UIButton!
+
     
-    let categories = ["Book", "Movie", "TV Show"]
+    let categories = ["Book", "Movie", "TV Show", "Artist", "Restaurant", "Other"]
     
     
     override func viewDidLoad() {
