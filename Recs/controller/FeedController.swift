@@ -94,7 +94,7 @@ class FeedController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let recView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 120))
         
-        recView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(60.0/255.0), CGFloat(145.0/255.0), CGFloat(131.0/255.0), 1.0])
+        recView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(146.0/255.0), CGFloat(212.0/255.0), CGFloat(201.0/255.0), 1.0])
         recView.layer.masksToBounds = false
         recView.layer.cornerRadius = 10.0
         recView.layer.shadowOffset = CGSize(width: -1, height: 1)
@@ -133,7 +133,8 @@ class FeedController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.contentView.sendSubview(toBack: recView)
         
         // add specific Rec data
-        cell.recUserLabel.text = String(recList[indexPath.row].userId)
+        //cell.recUserLabel.text = String(recList[indexPath.row].userId)
+        cell.recUserLabel.text = "Christopher Paschal"
         cell.recTitleLabel.text = recList[indexPath.row].title
                 
 
