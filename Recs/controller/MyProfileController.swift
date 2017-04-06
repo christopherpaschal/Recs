@@ -37,42 +37,41 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         let rec1 = Rec()
-        rec1.userId = 12345
+        rec1.userId = LoggedInUser.id
         rec1.title = "this book I love"
         rec1.category = "Book"
         recList.append(rec1)
         
         let rec2 = Rec()
-        rec2.userId = 12345
+        rec2.userId = "12345"
         rec2.title = "this movie I love"
         rec2.category = "Movie"
         recList.append(rec2)
         
         let rec3 = Rec()
-        rec3.userId = 12345
+        rec3.userId = "12345"
         rec3.title = "this tv show I love"
         rec3.category = "TV Show"
         recList.append(rec3)
         
         let rec4 = Rec()
-        rec4.userId = 12345
+        rec4.userId = "12345"
         rec4.title = "this restaurant I love"
         rec4.category = "Restaurant"
         recList.append(rec4)
         
         let rec5 = Rec()
-        rec5.userId = 12345
+        rec5.userId = "12345"
         rec5.title = "this artist I love"
         rec5.category = "Artist"
         recList.append(rec5)
         
         let rec6 = Rec()
-        rec6.userId = 12345
+        rec6.userId = "12345"
         rec6.title = "this thing I love"
         rec6.category = "Other"
         recList.append(rec6)
         
-        //profileRecListHeightConstraint.constant = CGFloat(100 * recList.count)
         
         // populate user data from FB
         populateUserData()
@@ -158,7 +157,7 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func populateUserData() {
-
+        
         self.profileNameLabel.text = LoggedInUser.name
         
         let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/picture?type=large&return_ssl_resources=1")
@@ -166,6 +165,15 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         self.profileImage.layer.cornerRadius = 10.0
         self.profileImage.clipsToBounds = true
 
+    }
+    
+    func populateUserRecs() {
+        
+        //use user id to get all recs under that id in AWS DB
+        
+        //put recs into array
+        
+        
     }
 
 

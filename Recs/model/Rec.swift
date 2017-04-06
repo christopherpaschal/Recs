@@ -13,7 +13,7 @@ class Rec {
     var category: String = ""
     var title: String = ""
     var date: Date = Date()
-    var userId: Int = 0
+    var userId: String = ""
     var recId: Int = 0
     
     init() {

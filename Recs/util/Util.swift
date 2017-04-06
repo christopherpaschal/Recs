@@ -7,4 +7,14 @@
 //
 
 import Foundation
+import AWSDynamoDB
+
+class Util {
+    
+    var mapper: AWSDynamoDBObjectMapper;
+    
+    init() {
+        let mapper = AWSDynamoDBObjectMapper.default()
+    }
+}
 
