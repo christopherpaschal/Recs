@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Xjd-MO-5dm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Xjd-MO-5dm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,23 +33,63 @@
                                         </constraints>
                                         <color key="sectionIndexBackgroundColor" red="0.37647058820000001" green="0.69019607839999997" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="recCell" textLabel="IyP-pN-IVr" rowHeight="80" style="IBUITableViewCellStyleDefault" id="Ga9-Zn-imz">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="recCell" id="g5g-6K-cmE" customClass="RecTableViewCell" customModule="Recs" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="130"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ga9-Zn-imz" id="WGK-VV-lPw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g5g-6K-cmE" id="eVA-8i-9mg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IyP-pN-IVr">
-                                                            <rect key="frame" x="15" y="0.0" width="345" height="80"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCo-XC-Vbt" userLabel="Rec Title Label">
+                                                            <rect key="frame" x="8" y="45" width="280" height="21"/>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
+                                                            <color key="textColor" red="0.18039215689999999" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHP-fE-IJi">
+                                                            <rect key="frame" x="16" y="92" width="30" height="30"/>
+                                                            <state key="normal" image="save_rec_icon"/>
+                                                        </button>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="circle_check" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-vC-eFd">
+                                                            <rect key="frame" x="284" y="8" width="80" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="80" id="Zis-TU-fJ5"/>
+                                                                <constraint firstAttribute="width" constant="80" id="wWJ-AQ-N6U"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="feed_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RJp-5y-5ab">
+                                                            <rect key="frame" x="12" y="8" width="27" height="29"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="X9Y-DQ-xkC"/>
+                                                                <constraint firstAttribute="height" constant="30" id="Y95-rl-K2r"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-b6-Ezl" userLabel="User Label">
+                                                            <rect key="frame" x="47" y="12" width="250" height="21"/>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                                            <color key="textColor" red="0.18039215689999999" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="uHP-fE-IJi" firstAttribute="bottom" secondItem="eVA-8i-9mg" secondAttribute="bottomMargin" id="1lD-41-ucF"/>
+                                                        <constraint firstItem="uHP-fE-IJi" firstAttribute="leading" secondItem="eVA-8i-9mg" secondAttribute="leadingMargin" constant="10" id="AIM-PT-sO5"/>
+                                                        <constraint firstItem="Ksn-vC-eFd" firstAttribute="top" secondItem="eVA-8i-9mg" secondAttribute="topMargin" constant="5" id="E2d-zq-P3q"/>
+                                                        <constraint firstItem="OKh-b6-Ezl" firstAttribute="leading" secondItem="RJp-5y-5ab" secondAttribute="trailing" constant="10" id="KdR-dj-0Y5"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="Ksn-vC-eFd" secondAttribute="trailing" constant="5" id="M7h-2k-jvt"/>
+                                                        <constraint firstItem="RJp-5y-5ab" firstAttribute="leading" secondItem="eVA-8i-9mg" secondAttribute="leadingMargin" constant="10" id="Wo0-5C-s6e"/>
+                                                        <constraint firstItem="RJp-5y-5ab" firstAttribute="top" secondItem="eVA-8i-9mg" secondAttribute="topMargin" constant="10" id="Xkn-4x-umG"/>
+                                                        <constraint firstItem="OKh-b6-Ezl" firstAttribute="top" secondItem="eVA-8i-9mg" secondAttribute="topMargin" constant="15" id="coU-8j-D4T"/>
+                                                        <constraint firstItem="CCo-XC-Vbt" firstAttribute="leading" secondItem="eVA-8i-9mg" secondAttribute="leadingMargin" constant="10" id="dWs-s9-azP"/>
+                                                        <constraint firstItem="CCo-XC-Vbt" firstAttribute="top" secondItem="OKh-b6-Ezl" secondAttribute="bottom" constant="10" id="etV-d7-pb8"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.37647058820000001" green="0.69019607839999997" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <outlet property="recContentView" destination="eVA-8i-9mg" id="Aju-iD-JKG"/>
+                                                    <outlet property="recTitleLabel" destination="CCo-XC-Vbt" id="PET-Od-gl7"/>
+                                                    <outlet property="recUserLabel" destination="OKh-b6-Ezl" id="x2W-qw-Mu2"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

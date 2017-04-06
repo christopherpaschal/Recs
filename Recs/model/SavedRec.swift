@@ -12,7 +12,6 @@ class SavedRec {
     
     var category: String = ""
     var title: String = ""
-    var reason: String = ""
     var date: Date = Date()
     var userId: Int = 0
     var recId: Int = 0
@@ -24,7 +23,6 @@ class SavedRec {
     init(rec: Rec) {
         category = rec.category
         title = rec.title
-        reason = rec.reason
         date = rec.date
         userId = rec.userId
         recId = rec.recId

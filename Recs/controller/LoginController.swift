@@ -59,7 +59,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         print("User Logged In")
-        
+        self.performSegue(withIdentifier: "loginSegue", sender: nil)
         if ((error) != nil)
         {
             // Process error
