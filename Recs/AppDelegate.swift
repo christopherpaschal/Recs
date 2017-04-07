@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AWSCore
+import AWSCognito
 
 struct LoggedInUser {
     
@@ -22,7 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        
+        //AWS stuff
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,
+            identityPoolId:"us-east-1:9f550295-7e2f-4b34-94ae-0e1eef2f726d")
+        
+        let configuration = AWSServiceConfiguration(region:.USEast1, credentialsProvider:credentialsProvider)
+        
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        
+        
+        // Facebook stuff
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)

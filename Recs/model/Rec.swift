@@ -7,16 +7,20 @@
 //
 
 import Foundation
+import AWSDynamoDB
 
-class Rec {
+class Rec : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
-    var category: String = ""
-    var title: String = ""
-    var date: Date = Date()
-    var userId: String = ""
-    var recId: Int = 0
+    var category: String? = ""
+    var title: String? = ""
+    var date: String? = ""
+    var userId: String? = ""
     
-    init() {
-        title = "blank Rec"
+    class func dynamoDBTableName() -> String {
+        return "Recs"
+    }
+    
+    class func hashKeyAttribute() -> String {
+        return "userId"
     }
 }
