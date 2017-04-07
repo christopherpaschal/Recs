@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
             connection.start()
             
-        }else{
+        } else {
             initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "loginController")
         }
         

@@ -27,6 +27,7 @@
 		E7B58F781E73529E00327941 /* Rec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F771E73529E00327941 /* Rec.swift */; };
 		E7B58F7A1E7353A800327941 /* SavedRec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F791E7353A800327941 /* SavedRec.swift */; };
 		E7B58F7C1E73542A00327941 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F7B1E73542A00327941 /* User.swift */; };
+		E7C6923F1E7745B300F95BF6 /* RecTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6923E1E7745B300F95BF6 /* RecTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		E7B58F771E73529E00327941 /* Rec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rec.swift; sourceTree = "<group>"; };
 		E7B58F791E7353A800327941 /* SavedRec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedRec.swift; sourceTree = "<group>"; };
 		E7B58F7B1E73542A00327941 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E7C6923E1E7745B300F95BF6 /* RecTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				E7B58F771E73529E00327941 /* Rec.swift */,
 				E7B58F791E7353A800327941 /* SavedRec.swift */,
 				E7B58F7B1E73542A00327941 /* User.swift */,
+				E7C6923E1E7745B300F95BF6 /* RecTableViewCell.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				E7B58F761E7351DB00327941 /* WriteRecController.swift in Sources */,
 				E7A422CC1E73928100DC3B24 /* Util.swift in Sources */,
 				E7B58F7C1E73542A00327941 /* User.swift in Sources */,
+				E7C6923F1E7745B300F95BF6 /* RecTableViewCell.swift in Sources */,
 				E75135841E725918004AE32D /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
