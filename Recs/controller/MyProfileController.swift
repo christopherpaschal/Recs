@@ -22,6 +22,7 @@ class MyProfileController: UIViewController {
     var firstName: String = "firstname"
     var lastName: String = "lastname"
     var pictureURL: String = ""
+    var test: String = "test"
     
 
     override func viewDidLoad() {
