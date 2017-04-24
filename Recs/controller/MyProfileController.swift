@@ -48,7 +48,8 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //let code = dbUtil.saveRec(rec: myRec!)
         
-        getRecsForUser(userId: "733073520189529")
+        getRecsForUser(userId: LoggedInUser.id)
+        
         
         // populate user data from FB
         populateUserData()
@@ -158,7 +159,7 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         let scanExpression = AWSDynamoDBScanExpression()
         scanExpression.limit = 50
         scanExpression.filterExpression = "userId = :val"
-        scanExpression.expressionAttributeValues = [":val": "733073520189529"]
+        scanExpression.expressionAttributeValues = [":val": userId]
         
         mapper.scan(Rec.self, expression: scanExpression).continueOnSuccessWith(block: { (task:AWSTask<AWSDynamoDBPaginatedOutput>!) -> Any? in
             if let error = task.error as NSError? {
