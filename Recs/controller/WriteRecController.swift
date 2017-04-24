@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSDynamoDB
 
 class WriteRecController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -14,7 +15,11 @@ class WriteRecController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     //UI Components
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var recTitleField: UITextField!
-    @IBOutlet weak var recReasonField: UITextView!
+    @IBOutlet weak var publishButton: UIButton!
+    
+    var category: String = ""
+    
+    let mapper: AWSDynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
 
     
     let categories = ["Book", "Movie", "TV Show", "Artist", "Restaurant", "Other"]
@@ -26,6 +31,8 @@ class WriteRecController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         categoryPicker.dataSource = self
         categoryPicker.delegate = self
+        publishButton.addTarget(self, action: #selector(WriteRecController.publishButtonPressed(sender:)) , for: .touchUpInside)
+
         
     }
     
@@ -36,6 +43,11 @@ class WriteRecController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "cancelWriteRecSegue" {
+            let nextView = segue.destination as! UITabBarController
+            nextView.selectedIndex = 1
+        }
+        
+        if segue.identifier == "recPublishedSegue" {
             let nextView = segue.destination as! UITabBarController
             nextView.selectedIndex = 1
         }
@@ -54,6 +66,35 @@ class WriteRecController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        category = categories[row]
+    }
+    
+    func publishButtonPressed(sender: UIButton!) {
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "dd MM yyyy"
+        
+        
+        let newRec:Rec = Rec()
+        newRec.category = category
+        newRec.title = recTitleField.text
+        newRec.userId = LoggedInUser.id
+        newRec.date = formatter.string(from: date)
+        
+        mapper.save(newRec).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+            if let error = task.error as NSError? {
+                print("The request failed. Error: \(error)")
+            } else {
+                // Do something with task.result or perform other operations.
+                print("SAVE SUCCESSFUL\n\n")
+            }
+            
+            return task
+        })
+        
+        self.performSegue(withIdentifier: "recPublishedSegue", sender: self)
         
     }
     
