@@ -15,12 +15,13 @@ class Rec : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var title: String? = ""
     var date: String? = ""
     var userId: String? = ""
+    var recId: String? = ""
     
     class func dynamoDBTableName() -> String {
-        return "Recs"
+        return "recs"
     }
     
     class func hashKeyAttribute() -> String {
-        return "userId"
+        return "recId"
     }
 }

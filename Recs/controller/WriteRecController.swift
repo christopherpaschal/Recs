@@ -33,7 +33,8 @@ class WriteRecController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         categoryPicker.delegate = self
         publishButton.addTarget(self, action: #selector(WriteRecController.publishButtonPressed(sender:)) , for: .touchUpInside)
 
-        
+        // set default to be the first picker option
+        category = categories[0]
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,13 +72,16 @@ class WriteRecController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func publishButtonPressed(sender: UIButton!) {
         
+        let uuid = UUID().uuidString
+        
         let date = Date()
         let formatter = DateFormatter()
         
         formatter.dateFormat = "dd MM yyyy"
         
-        
+        print("\n\n\nWRITING REC")
         let newRec:Rec = Rec()
+        newRec.recId = uuid
         newRec.category = category
         newRec.title = recTitleField.text
         newRec.userId = LoggedInUser.id
