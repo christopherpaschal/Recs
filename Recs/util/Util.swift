@@ -11,10 +11,20 @@ import AWSDynamoDB
 
 class Util {
     
-    var mapper: AWSDynamoDBObjectMapper;
+    let mapper: AWSDynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
     
-    init() {
-        let mapper = AWSDynamoDBObjectMapper.default()
+    func saveRec(rec: Rec) -> Int {
+        mapper.save(rec).continueOnSuccessWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+            if let error = task.error as NSError? {
+                print("The request failed. Error: \(error)")
+                return 1
+            } else {
+                // Do something with task.result or perform other operations.
+                return 0
+            }
+        })
+        return 0
     }
+
 }
 

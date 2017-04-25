@@ -25,7 +25,6 @@
 		E7B58F741E734DFA00327941 /* SavedRecsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F731E734DFA00327941 /* SavedRecsController.swift */; };
 		E7B58F761E7351DB00327941 /* WriteRecController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F751E7351DB00327941 /* WriteRecController.swift */; };
 		E7B58F781E73529E00327941 /* Rec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F771E73529E00327941 /* Rec.swift */; };
-		E7B58F7A1E7353A800327941 /* SavedRec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F791E7353A800327941 /* SavedRec.swift */; };
 		E7B58F7C1E73542A00327941 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58F7B1E73542A00327941 /* User.swift */; };
 		E7C6923F1E7745B300F95BF6 /* RecTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6923E1E7745B300F95BF6 /* RecTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -76,7 +75,6 @@
 		E7B58F731E734DFA00327941 /* SavedRecsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedRecsController.swift; sourceTree = "<group>"; };
 		E7B58F751E7351DB00327941 /* WriteRecController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteRecController.swift; sourceTree = "<group>"; };
 		E7B58F771E73529E00327941 /* Rec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rec.swift; sourceTree = "<group>"; };
-		E7B58F791E7353A800327941 /* SavedRec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedRec.swift; sourceTree = "<group>"; };
 		E7B58F7B1E73542A00327941 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E7C6923E1E7745B300F95BF6 /* RecTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				E7B58F771E73529E00327941 /* Rec.swift */,
-				E7B58F791E7353A800327941 /* SavedRec.swift */,
 				E7B58F7B1E73542A00327941 /* User.swift */,
 				E7C6923E1E7745B300F95BF6 /* RecTableViewCell.swift */,
 			);
@@ -411,7 +408,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7B58F7A1E7353A800327941 /* SavedRec.swift in Sources */,
 				E7B58F741E734DFA00327941 /* SavedRecsController.swift in Sources */,
 				E75135861E725918004AE32D /* MyProfileController.swift in Sources */,
 				E7A422C81E73868100DC3B24 /* LoginController.swift in Sources */,

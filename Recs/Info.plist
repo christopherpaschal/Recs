@@ -89,5 +89,13 @@
     </array>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>profile pics</string>
+    <key>DynamoDBObjectMapper</key>
+    <dict>
+        <key>Default</key>
+        <dict>
+            <key>Region</key>
+            <string>us-east-1</string>
+        </dict>
+    </dict>
 </dict>
 </plist>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSDynamoDB
 
 class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,6 +19,8 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var profileFollowingLabel: UILabel!
     @IBOutlet weak var profileRecsList: UITableView!
     
+    let mapper: AWSDynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+    
     @IBOutlet weak var profileRecListHeightConstraint: NSLayoutConstraint!
     
     var id: String = ""
@@ -27,6 +30,8 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var recList = [Rec]()
     
+    var dbUtil = Util()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,42 +40,15 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         profileRecsList.dataSource = self
         profileRecsList.delegate = self
         
+        let myRec = Rec()
+        myRec?.title = "Static Rec!"
+        myRec?.userId = "12345"
+        myRec?.category = "Book"
+        myRec?.date = "today"
         
-        let rec1 = Rec()
-        rec1.userId = LoggedInUser.id
-        rec1.title = "this book I love"
-        rec1.category = "Book"
-        recList.append(rec1)
+        //let code = dbUtil.saveRec(rec: myRec!)
         
-        let rec2 = Rec()
-        rec2.userId = "12345"
-        rec2.title = "this movie I love"
-        rec2.category = "Movie"
-        recList.append(rec2)
-        
-        let rec3 = Rec()
-        rec3.userId = "12345"
-        rec3.title = "this tv show I love"
-        rec3.category = "TV Show"
-        recList.append(rec3)
-        
-        let rec4 = Rec()
-        rec4.userId = "12345"
-        rec4.title = "this restaurant I love"
-        rec4.category = "Restaurant"
-        recList.append(rec4)
-        
-        let rec5 = Rec()
-        rec5.userId = "12345"
-        rec5.title = "this artist I love"
-        rec5.category = "Artist"
-        recList.append(rec5)
-        
-        let rec6 = Rec()
-        rec6.userId = "12345"
-        rec6.title = "this thing I love"
-        rec6.category = "Other"
-        recList.append(rec6)
+        getRecsForUser(userId: LoggedInUser.id)
         
         
         // populate user data from FB
@@ -173,6 +151,31 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //put recs into array
         
+        
+    }
+    
+    func getRecsForUser(userId: String) {
+        
+        let scanExpression = AWSDynamoDBScanExpression()
+        scanExpression.limit = 50
+        scanExpression.filterExpression = "userId = :val"
+        scanExpression.expressionAttributeValues = [":val": userId]
+        
+        mapper.scan(Rec.self, expression: scanExpression).continueOnSuccessWith(block: { (task:AWSTask<AWSDynamoDBPaginatedOutput>!) -> Any? in
+            if let error = task.error as NSError? {
+                print("The request failed. Error: \(error)")
+            } else if let paginatedOutput = task.result {
+                for rec in paginatedOutput.items as! [Rec] {
+                    // Do something with rec.
+                    print(rec.title ?? "no title")
+                    self.recList.append(rec)
+                }
+                DispatchQueue.main.async{
+                    self.profileRecsList.reloadData()
+                }
+            }
+            return task
+        })
         
     }
 
