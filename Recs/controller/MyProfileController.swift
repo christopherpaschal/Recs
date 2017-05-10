@@ -78,9 +78,9 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.contentView.viewWithTag(1)?.removeFromSuperview()
         
         
-        let recView : UIView = UIView(frame: CGRect(x: 10, y: 45, width: self.view.frame.size.width - 20, height: 210))
+        let recView : UIView = UIView(frame: CGRect(x: 0, y: 45, width: self.view.frame.size.width, height: 300))
         
-        
+        recView.backgroundColor = UIColor.lightGray
         
         // set a tag so view can be removed later when reusing cell
         recView.tag = 1
@@ -91,29 +91,48 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // add specific Rec data
         //cell.recUserLabel.text = String(recList[indexPath.row].userId)
+        // TODO make dynamic
         cell.recUserLabel.text = "Christopher Paschal"
 
         cell.recTitleLabel.text = recList[indexPath.row].title
         
         // color label according to rec category
         if recList[indexPath.row].category == "Book" {
-            cell.recTitleLabel.textColor = UIColor(red: CGFloat(241.0/255.0), green: CGFloat(131.0/255.0), blue: CGFloat(149.0/255.0), alpha: 1.0)
+            let color: UIColor = UIColor(red: CGFloat(241.0/255.0), green: CGFloat(131.0/255.0), blue: CGFloat(149.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "Book"
             
         } else if recList[indexPath.row].category == "Movie" {
-            cell.recTitleLabel.textColor = UIColor(red: CGFloat(139.0/255.0), green: CGFloat(255.0/255.0), blue: CGFloat(139.0/255.0), alpha: 1.0)
+            let color: UIColor = UIColor(red: CGFloat(139.0/255.0), green: CGFloat(255.0/255.0), blue: CGFloat(139.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "Movie"
             
         } else if recList[indexPath.row].category == "TV Show" {
-            cell.recTitleLabel.textColor = UIColor(red: CGFloat(255.0/255.0), green: CGFloat(186.0/255.0), blue: CGFloat(139.0/255.0), alpha: 1.0)
+            let color: UIColor = UIColor(red: CGFloat(255.0/255.0), green: CGFloat(186.0/255.0), blue: CGFloat(139.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "TV Show"
             
         } else if recList[indexPath.row].category == "Artist" {
-            cell.recTitleLabel.textColor = UIColor(red: CGFloat(126.0/255.0), green: CGFloat(114.0/255.0), blue: CGFloat(189.0/255.0), alpha: 1.0)
+            let color: UIColor = UIColor(red: CGFloat(126.0/255.0), green: CGFloat(114.0/255.0), blue: CGFloat(189.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "Artist"
             
             
         } else if recList[indexPath.row].category == "Restaurant" {
-            cell.recTitleLabel.textColor = UIColor(red: CGFloat(119.0/255.0), green: CGFloat(146.0/255.0), blue: CGFloat(218.0/255.0), alpha: 1.0)
+            let color: UIColor = UIColor(red: CGFloat(119.0/255.0), green: CGFloat(146.0/255.0), blue: CGFloat(218.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "Restaurant"
             
         } else {
-            cell.recTitleLabel.textColor = UIColor(red: CGFloat(234.0/255.0), green: CGFloat(245.0/255.0), blue: CGFloat(251.0/255.0), alpha: 1.0)
+            let color: UIColor = UIColor(red: CGFloat(234.0/255.0), green: CGFloat(245.0/255.0), blue: CGFloat(251.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "Other"
         }
         
         
