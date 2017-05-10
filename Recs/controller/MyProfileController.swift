@@ -77,41 +77,10 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         // remove old content view
         cell.contentView.viewWithTag(1)?.removeFromSuperview()
         
-        // create boilerplate size and shape
-        cell.contentView.backgroundColor = UIColor.clear
         
-        let recView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 120))
-        
-        recView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(146.0/255.0), CGFloat(212.0/255.0), CGFloat(201.0/255.0), 1.0])
-        recView.layer.masksToBounds = false
-        recView.layer.cornerRadius = 10.0
-        recView.layer.shadowOffset = CGSize(width: -1, height: 1)
-        recView.layer.shadowOpacity = 0.1
-        
-        recView.layer.borderWidth = 3.0
+        let recView : UIView = UIView(frame: CGRect(x: 10, y: 45, width: self.view.frame.size.width - 20, height: 210))
         
         
-        
-        // color border according to rec category
-        if recList[indexPath.row].category == "Book" {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(241.0/255.0), CGFloat(131.0/255.0), CGFloat(149.0/255.0), 1.0])
-            
-        } else if recList[indexPath.row].category == "Movie" {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(255.0/255.0), CGFloat(217.0/255.0), CGFloat(139.0/255.0), 1.0])
-            
-        } else if recList[indexPath.row].category == "TV Show" {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(255.0/255.0), CGFloat(186.0/255.0), CGFloat(139.0/255.0), 1.0])
-            
-        } else if recList[indexPath.row].category == "Artist" {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(126.0/255.0), CGFloat(114.0/255.0), CGFloat(189.0/255.0), 1.0])
-            
-            
-        } else if recList[indexPath.row].category == "Restaurant" {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(146.0/255.0), CGFloat(218.0/255.0), CGFloat(119.0/255.0), 1.0])
-            
-        } else {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(234.0/255.0), CGFloat(245.0/255.0), CGFloat(251.0/255.0), 1.0])
-        }
         
         // set a tag so view can be removed later when reusing cell
         recView.tag = 1
@@ -123,7 +92,29 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         // add specific Rec data
         //cell.recUserLabel.text = String(recList[indexPath.row].userId)
         cell.recUserLabel.text = "Christopher Paschal"
+
         cell.recTitleLabel.text = recList[indexPath.row].title
+        
+        // color label according to rec category
+        if recList[indexPath.row].category == "Book" {
+            cell.recTitleLabel.textColor = UIColor(red: CGFloat(241.0/255.0), green: CGFloat(131.0/255.0), blue: CGFloat(149.0/255.0), alpha: 1.0)
+            
+        } else if recList[indexPath.row].category == "Movie" {
+            cell.recTitleLabel.textColor = UIColor(red: CGFloat(139.0/255.0), green: CGFloat(255.0/255.0), blue: CGFloat(139.0/255.0), alpha: 1.0)
+            
+        } else if recList[indexPath.row].category == "TV Show" {
+            cell.recTitleLabel.textColor = UIColor(red: CGFloat(255.0/255.0), green: CGFloat(186.0/255.0), blue: CGFloat(139.0/255.0), alpha: 1.0)
+            
+        } else if recList[indexPath.row].category == "Artist" {
+            cell.recTitleLabel.textColor = UIColor(red: CGFloat(126.0/255.0), green: CGFloat(114.0/255.0), blue: CGFloat(189.0/255.0), alpha: 1.0)
+            
+            
+        } else if recList[indexPath.row].category == "Restaurant" {
+            cell.recTitleLabel.textColor = UIColor(red: CGFloat(119.0/255.0), green: CGFloat(146.0/255.0), blue: CGFloat(218.0/255.0), alpha: 1.0)
+            
+        } else {
+            cell.recTitleLabel.textColor = UIColor(red: CGFloat(234.0/255.0), green: CGFloat(245.0/255.0), blue: CGFloat(251.0/255.0), alpha: 1.0)
+        }
         
         
         return cell
