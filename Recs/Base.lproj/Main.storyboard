@@ -40,7 +40,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCo-XC-Vbt" userLabel="Rec Title Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCo-XC-Vbt" userLabel="Rec Title Label">
                                                             <rect key="frame" x="18" y="49" width="340" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="340" id="Mer-z7-TkN"/>
@@ -59,10 +59,10 @@
                                                             <state key="normal" image="save_rec_icon"/>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feed_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RJp-5y-5ab">
-                                                            <rect key="frame" x="13" y="18" width="30" height="30"/>
+                                                            <rect key="frame" x="8" y="23" width="20" height="20"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="X9Y-DQ-xkC"/>
-                                                                <constraint firstAttribute="height" constant="30" id="Y95-rl-K2r"/>
+                                                                <constraint firstAttribute="width" constant="20" id="X9Y-DQ-xkC"/>
+                                                                <constraint firstAttribute="height" constant="20" id="Y95-rl-K2r"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-b6-Ezl" userLabel="User Label">
@@ -91,8 +91,8 @@
                                                         <constraint firstItem="eGq-Mm-Gvh" firstAttribute="bottom" secondItem="eVA-8i-9mg" secondAttribute="bottomMargin" id="AYC-ql-L6v"/>
                                                         <constraint firstItem="eGq-Mm-Gvh" firstAttribute="leading" secondItem="uHP-fE-IJi" secondAttribute="trailing" constant="5" id="Icp-Qr-9VA"/>
                                                         <constraint firstItem="OKh-b6-Ezl" firstAttribute="leading" secondItem="RJp-5y-5ab" secondAttribute="trailing" constant="10" id="KdR-dj-0Y5"/>
-                                                        <constraint firstItem="RJp-5y-5ab" firstAttribute="leading" secondItem="eVA-8i-9mg" secondAttribute="leadingMargin" constant="5" id="Wo0-5C-s6e"/>
-                                                        <constraint firstItem="RJp-5y-5ab" firstAttribute="top" secondItem="eVA-8i-9mg" secondAttribute="topMargin" constant="10" id="Xkn-4x-umG"/>
+                                                        <constraint firstItem="RJp-5y-5ab" firstAttribute="leading" secondItem="eVA-8i-9mg" secondAttribute="leadingMargin" id="Wo0-5C-s6e"/>
+                                                        <constraint firstItem="RJp-5y-5ab" firstAttribute="top" secondItem="eVA-8i-9mg" secondAttribute="topMargin" constant="15" id="Xkn-4x-umG"/>
                                                         <constraint firstItem="OKh-b6-Ezl" firstAttribute="top" secondItem="eVA-8i-9mg" secondAttribute="topMargin" constant="15" id="coU-8j-D4T"/>
                                                         <constraint firstItem="CCo-XC-Vbt" firstAttribute="leading" secondItem="eVA-8i-9mg" secondAttribute="leadingMargin" constant="10" id="dWs-s9-azP"/>
                                                         <constraint firstItem="uHP-fE-IJi" firstAttribute="bottom" secondItem="eVA-8i-9mg" secondAttribute="bottomMargin" id="eJM-63-Iee"/>
@@ -106,6 +106,7 @@
                                                     <outlet property="categoryLabel" destination="Rw3-Vg-WLc" id="x5Z-fO-KFS"/>
                                                     <outlet property="recContentView" destination="eVA-8i-9mg" id="Aju-iD-JKG"/>
                                                     <outlet property="recTitleLabel" destination="CCo-XC-Vbt" id="PET-Od-gl7"/>
+                                                    <outlet property="recUserImage" destination="RJp-5y-5ab" id="uet-r2-FIY"/>
                                                     <outlet property="recUserLabel" destination="OKh-b6-Ezl" id="x2W-qw-Mu2"/>
                                                 </connections>
                                             </tableViewCell>

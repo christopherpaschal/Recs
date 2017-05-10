@@ -93,6 +93,9 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         //cell.recUserLabel.text = String(recList[indexPath.row].userId)
         // TODO make dynamic
         cell.recUserLabel.text = "Christopher Paschal"
+        let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/picture?type=large&return_ssl_resources=1")
+        cell.recUserImage.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+        cell.recUserImage.clipsToBounds = true
 
         cell.recTitleLabel.text = recList[indexPath.row].title
         
