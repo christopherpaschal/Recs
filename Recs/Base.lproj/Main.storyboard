@@ -127,7 +127,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgS-hJ-zD8" userLabel="Profile Image View">
                                 <rect key="frame" x="125" y="28" width="125" height="125"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second" translatesAutoresizingMaskIntoConstraints="NO" id="XQf-Ej-VLu" userLabel="Profile Image">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_icon" translatesAutoresizingMaskIntoConstraints="NO" id="XQf-Ej-VLu" userLabel="Profile Image">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                     </imageView>
                                 </subviews>
@@ -153,12 +153,12 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRf-hU-fz7" userLabel="Write Button">
-                                <rect key="frame" x="338" y="20" width="37" height="30"/>
+                                <rect key="frame" x="333" y="30" width="37" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="N4h-wo-2uB"/>
                                     <constraint firstAttribute="height" constant="30" id="Rbf-jt-4Gt"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="write_rec_icon"/>
+                                <state key="normal" title="Button" image="add_icon"/>
                                 <connections>
                                     <segue destination="DM3-b0-q6v" kind="presentation" id="ilI-JC-kuM"/>
                                 </connections>
@@ -176,11 +176,11 @@
                         <constraints>
                             <constraint firstItem="F6f-Yk-zo8" firstAttribute="top" secondItem="iVD-5b-Jfj" secondAttribute="bottom" constant="14" id="BWv-Xd-mCn"/>
                             <constraint firstItem="YgS-hJ-zD8" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="CTp-zG-62c"/>
-                            <constraint firstItem="GRf-hU-fz7" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="N1H-Mm-sz0"/>
+                            <constraint firstItem="GRf-hU-fz7" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="N1H-Mm-sz0"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="F6f-Yk-zo8" secondAttribute="bottom" id="PgX-Iq-WGo"/>
                             <constraint firstItem="YgS-hJ-zD8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="QpU-Ah-b37"/>
                             <constraint firstAttribute="trailing" secondItem="F6f-Yk-zo8" secondAttribute="trailing" id="RAi-pQ-WJw"/>
-                            <constraint firstAttribute="trailing" secondItem="GRf-hU-fz7" secondAttribute="trailing" id="VSx-QD-sU8"/>
+                            <constraint firstAttribute="trailing" secondItem="GRf-hU-fz7" secondAttribute="trailing" constant="5" id="VSx-QD-sU8"/>
                             <constraint firstItem="iVD-5b-Jfj" firstAttribute="top" secondItem="8VC-v7-Fsc" secondAttribute="bottom" constant="8" id="XcM-Ir-ujE"/>
                             <constraint firstAttribute="bottom" secondItem="F6f-Yk-zo8" secondAttribute="bottom" id="avW-uY-V6k"/>
                             <constraint firstItem="Csu-zB-rba" firstAttribute="top" secondItem="YgS-hJ-zD8" secondAttribute="bottom" constant="8" id="bUf-6G-x9k"/>
@@ -330,7 +330,7 @@
                                     <constraint firstAttribute="height" constant="30" id="I5R-Gf-hym"/>
                                     <constraint firstAttribute="width" constant="30" id="tnc-T7-mZs"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="write_rec_icon"/>
+                                <state key="normal" title="Button" image="add_icon"/>
                                 <connections>
                                     <segue destination="DM3-b0-q6v" kind="presentation" id="mG5-0I-0m1"/>
                                 </connections>
@@ -375,7 +375,7 @@
                                     <constraint firstAttribute="height" constant="30" id="kQs-qt-TEh"/>
                                     <constraint firstAttribute="width" constant="30" id="ptc-Ws-19u"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="write_rec_icon"/>
+                                <state key="normal" title="Button" image="add_icon"/>
                                 <connections>
                                     <segue destination="DM3-b0-q6v" kind="presentation" id="tqI-ab-jlw"/>
                                 </connections>
@@ -474,14 +474,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_icon" width="32" height="32"/>
         <image name="feed_icon" width="30" height="30"/>
         <image name="me_icon" width="30" height="30"/>
         <image name="save_icon" width="32" height="33"/>
-        <image name="second" width="30" height="30"/>
-        <image name="write_rec_icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mG5-0I-0m1"/>
         <segue reference="z2q-Tz-oUU"/>
+        <segue reference="ilI-JC-kuM"/>
     </inferredMetricsTieBreakers>
 </document>
