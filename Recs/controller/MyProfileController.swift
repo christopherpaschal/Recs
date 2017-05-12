@@ -46,23 +46,25 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         // populate user data from FB
         populateUserData()
         
-//        let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/friends")
-//        
-//        let task = URLSession.dataTask(with: url!) { data, response, error in
-//            guard error == nil else {
-//                print(error!)
-//                return
-//            }
-//            guard let data = data else {
-//                print("Data is empty")
-//                return
-//            }
-//            
-//            let json = try! JSONSerialization.jsonObject(with: data, options: [])
-//            print(json)
-//        }
-//        
-//        task.resume()
+        // get list of friends
+        /*
+ 
+         
+         
+         HUGE ISSUE
+         id's are app-specific, so requesting taggable_friends for testing
+         purposes will return id's with a different format
+         
+         POSSIBLE SOLUTION
+         FB provides access to "test users" that I think will have their id
+         formatted in proper way
+         
+         also /me/friends will only return 25 at a time - need Algo to get all w/ multiple
+         requests - ugh I hate FB
+ 
+ 
+ 
+        */
         let params = ["fields": "id, first_name, last_name"]
         let request = FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: params)
         request!.start { (connection, result, error) -> Void in
