@@ -40,19 +40,45 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         profileRecsList.dataSource = self
         profileRecsList.delegate = self
         
-        let myRec = Rec()
-        myRec?.title = "Static Rec!"
-        myRec?.userId = "12345"
-        myRec?.category = "Book"
-        myRec?.date = "today"
-        
-        //let code = dbUtil.saveRec(rec: myRec!)
-        
+        // get recs for logged in user
         getRecsForUser(userId: LoggedInUser.id)
-        
         
         // populate user data from FB
         populateUserData()
+        
+//        let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/friends")
+//        
+//        let task = URLSession.dataTask(with: url!) { data, response, error in
+//            guard error == nil else {
+//                print(error!)
+//                return
+//            }
+//            guard let data = data else {
+//                print("Data is empty")
+//                return
+//            }
+//            
+//            let json = try! JSONSerialization.jsonObject(with: data, options: [])
+//            print(json)
+//        }
+//        
+//        task.resume()
+        let params = ["fields": "id, first_name, last_name"]
+        let request = FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: params)
+        request!.start { (connection, result, error) -> Void in
+            
+            if error != nil {
+                print(error!)
+            }
+            else if result != nil{
+                let dict = result as? NSDictionary
+                let friends = dict?["data"] as? NSArray
+                print(friends)
+                for friend in friends! {
+                    print(friend)
+                }
+            }
+        }
        
     }
 
@@ -77,41 +103,10 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         // remove old content view
         cell.contentView.viewWithTag(1)?.removeFromSuperview()
         
-        // create boilerplate size and shape
-        cell.contentView.backgroundColor = UIColor.clear
         
-        let recView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 120))
+        let recView : UIView = UIView(frame: CGRect(x: 0, y: 45, width: self.view.frame.size.width, height: 300))
         
-        recView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(146.0/255.0), CGFloat(212.0/255.0), CGFloat(201.0/255.0), 1.0])
-        recView.layer.masksToBounds = false
-        recView.layer.cornerRadius = 10.0
-        recView.layer.shadowOffset = CGSize(width: -1, height: 1)
-        recView.layer.shadowOpacity = 0.1
-        
-        recView.layer.borderWidth = 3.0
-        
-        
-        
-        // color border according to rec category
-        if recList[indexPath.row].category == "Book" {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(241.0/255.0), CGFloat(131.0/255.0), CGFloat(149.0/255.0), 1.0])
-            
-        } else if recList[indexPath.row].category == "Movie" {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(255.0/255.0), CGFloat(217.0/255.0), CGFloat(139.0/255.0), 1.0])
-            
-        } else if recList[indexPath.row].category == "TV Show" {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(255.0/255.0), CGFloat(186.0/255.0), CGFloat(139.0/255.0), 1.0])
-            
-        } else if recList[indexPath.row].category == "Artist" {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(126.0/255.0), CGFloat(114.0/255.0), CGFloat(189.0/255.0), 1.0])
-            
-            
-        } else if recList[indexPath.row].category == "Restaurant" {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(146.0/255.0), CGFloat(218.0/255.0), CGFloat(119.0/255.0), 1.0])
-            
-        } else {
-            recView.layer.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(234.0/255.0), CGFloat(245.0/255.0), CGFloat(251.0/255.0), 1.0])
-        }
+        recView.backgroundColor = UIColor.lightGray
         
         // set a tag so view can be removed later when reusing cell
         recView.tag = 1
@@ -122,8 +117,52 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // add specific Rec data
         //cell.recUserLabel.text = String(recList[indexPath.row].userId)
-        cell.recUserLabel.text = "Christopher Paschal"
+        // TODO make dynamic
+        cell.recUserLabel.text = LoggedInUser.name
+        let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/picture?type=large&return_ssl_resources=1")
+        cell.recUserImage.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+        cell.recUserImage.clipsToBounds = true
+
         cell.recTitleLabel.text = recList[indexPath.row].title
+        
+        // color label according to rec category
+        if recList[indexPath.row].category == "Book" {
+            let color: UIColor = UIColor(red: CGFloat(241.0/255.0), green: CGFloat(131.0/255.0), blue: CGFloat(149.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "Book"
+            
+        } else if recList[indexPath.row].category == "Movie" {
+            let color: UIColor = UIColor(red: CGFloat(139.0/255.0), green: CGFloat(255.0/255.0), blue: CGFloat(139.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "Movie"
+            
+        } else if recList[indexPath.row].category == "TV Show" {
+            let color: UIColor = UIColor(red: CGFloat(255.0/255.0), green: CGFloat(186.0/255.0), blue: CGFloat(139.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "TV Show"
+            
+        } else if recList[indexPath.row].category == "Artist" {
+            let color: UIColor = UIColor(red: CGFloat(126.0/255.0), green: CGFloat(114.0/255.0), blue: CGFloat(189.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "Artist"
+            
+            
+        } else if recList[indexPath.row].category == "Restaurant" {
+            let color: UIColor = UIColor(red: CGFloat(119.0/255.0), green: CGFloat(146.0/255.0), blue: CGFloat(218.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "Restaurant"
+            
+        } else {
+            let color: UIColor = UIColor(red: CGFloat(234.0/255.0), green: CGFloat(245.0/255.0), blue: CGFloat(251.0/255.0), alpha: 1.0)
+            cell.recTitleLabel.textColor = color
+            cell.categoryLabel.textColor = color
+            cell.categoryLabel.text = "Other"
+        }
         
         
         return cell
@@ -136,6 +175,7 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func populateUserData() {
         
+        //set name and image
         self.profileNameLabel.text = LoggedInUser.name
         
         let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/picture?type=large&return_ssl_resources=1")
@@ -167,7 +207,6 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
             } else if let paginatedOutput = task.result {
                 for rec in paginatedOutput.items as! [Rec] {
                     // Do something with rec.
-                    print(rec.title ?? "no title")
                     self.recList.append(rec)
                 }
                 DispatchQueue.main.async{

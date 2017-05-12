@@ -16,6 +16,7 @@ class WriteRecController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var recTitleField: UITextField!
     @IBOutlet weak var publishButton: UIButton!
+    @IBOutlet weak var instructionsLabel: UILabel!
     
     var category: String = ""
     
@@ -35,6 +36,9 @@ class WriteRecController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
 
         // set default to be the first picker option
         category = categories[0]
+        
+        // load in instructions to write rec
+        self.instructionsLabel.text = "Write a Reccomendation, giving it a Category and a Name"
     }
     
     override func didReceiveMemoryWarning() {

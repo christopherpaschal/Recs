@@ -13,6 +13,8 @@ class RecTableViewCell: UITableViewCell {
     @IBOutlet weak var recUserLabel: UILabel!
     @IBOutlet weak var recTitleLabel: UILabel!
     @IBOutlet weak var recContentView: UIView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var recUserImage: UIImageView!
     
     
     override func awakeFromNib() {

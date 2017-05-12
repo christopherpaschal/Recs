@@ -50,7 +50,7 @@ class FeedController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // create boilerplate size and shape
         cell.contentView.backgroundColor = UIColor.clear
         
-        let recView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 120))
+        let recView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 300))
         
         recView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(146.0/255.0), CGFloat(212.0/255.0), CGFloat(201.0/255.0), 1.0])
         recView.layer.masksToBounds = false
