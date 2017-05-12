@@ -45,6 +45,40 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // populate user data from FB
         populateUserData()
+        
+//        let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/friends")
+//        
+//        let task = URLSession.dataTask(with: url!) { data, response, error in
+//            guard error == nil else {
+//                print(error!)
+//                return
+//            }
+//            guard let data = data else {
+//                print("Data is empty")
+//                return
+//            }
+//            
+//            let json = try! JSONSerialization.jsonObject(with: data, options: [])
+//            print(json)
+//        }
+//        
+//        task.resume()
+        let params = ["fields": "id, first_name, last_name"]
+        let request = FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: params)
+        request!.start { (connection, result, error) -> Void in
+            
+            if error != nil {
+                print(error!)
+            }
+            else if result != nil{
+                let dict = result as? NSDictionary
+                let friends = dict?["data"] as? NSArray
+                print(friends)
+                for friend in friends! {
+                    print(friend)
+                }
+            }
+        }
        
     }
 
@@ -173,7 +207,6 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
             } else if let paginatedOutput = task.result {
                 for rec in paginatedOutput.items as! [Rec] {
                     // Do something with rec.
-                    print(rec.title ?? "no title")
                     self.recList.append(rec)
                 }
                 DispatchQueue.main.async{
