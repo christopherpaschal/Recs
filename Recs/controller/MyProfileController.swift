@@ -40,16 +40,8 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         profileRecsList.dataSource = self
         profileRecsList.delegate = self
         
-        let myRec = Rec()
-        myRec?.title = "Static Rec!"
-        myRec?.userId = "12345"
-        myRec?.category = "Book"
-        myRec?.date = "today"
-        
-        //let code = dbUtil.saveRec(rec: myRec!)
-        
+        // get recs for logged in user
         getRecsForUser(userId: LoggedInUser.id)
-        
         
         // populate user data from FB
         populateUserData()
@@ -92,7 +84,7 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
         // add specific Rec data
         //cell.recUserLabel.text = String(recList[indexPath.row].userId)
         // TODO make dynamic
-        cell.recUserLabel.text = "Christopher Paschal"
+        cell.recUserLabel.text = LoggedInUser.name
         let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/picture?type=large&return_ssl_resources=1")
         cell.recUserImage.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
         cell.recUserImage.clipsToBounds = true
@@ -149,6 +141,7 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func populateUserData() {
         
+        //set name and image
         self.profileNameLabel.text = LoggedInUser.name
         
         let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/picture?type=large&return_ssl_resources=1")
