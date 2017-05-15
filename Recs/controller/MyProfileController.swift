@@ -24,8 +24,8 @@ class MyProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var profileRecListHeightConstraint: NSLayoutConstraint!
     
     var id: String = ""
-    var firstName: String = "firstname"
-    var lastName: String = "lastname"
+    var firstName: String = "???"
+    var lastName: String = "???"
     var pictureURL: String = ""
     
     var recList = [Rec]()

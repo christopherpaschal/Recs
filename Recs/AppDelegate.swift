@@ -58,6 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 LoggedInUser.name = (data["name"] as? String)!
                 
                 LoggedInUser.id = (data["id"] as? String)!
+                print(LoggedInUser.name)
+                print(LoggedInUser.id)
 
             })
             connection.start()
