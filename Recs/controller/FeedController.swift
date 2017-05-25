@@ -65,8 +65,8 @@ class FeedController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // add specific Rec data
         //cell.recUserLabel.text = String(recList[indexPath.row].userId)
         // TODO make dynamic
-        cell.recUserLabel.text = LoggedInUser.name
-        let url = NSURL(string: "https://graph.facebook.com/\(LoggedInUser.id)/picture?type=large&return_ssl_resources=1")
+        cell.recUserLabel.text = recList[indexPath.row].userName
+        let url = NSURL(string: "https://graph.facebook.com/\(recList[indexPath.row].userId!)/picture?type=large&return_ssl_resources=1")
         cell.recUserImage.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
         cell.recUserImage.clipsToBounds = true
         

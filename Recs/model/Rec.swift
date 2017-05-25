@@ -16,6 +16,7 @@ class Rec : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var date: String? = ""
     var userId: String? = ""
     var recId: String? = ""
+    var userName: String? = ""
     
     class func dynamoDBTableName() -> String {
         return "recs"
